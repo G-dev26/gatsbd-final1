@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gatsbie's Birthday Surprise</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:wght@700&family=Sacramento&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body class="no-scroll">
+    <div class="main-container">
+        <div class="floating-hearts" id="floating-hearts"></div>
+    <!-- Birthday Hero -->
+    <section id="birthday-hero" class="content-section" aria-label="Birthday Greeting">
+        <h1>Happy 19th Birthday, Gatsbie!</h1>
+        <p>Finally 19 — a beautiful milestone, my love.</p>
+            <img src="../assets/images/gats.jpg" alt="my gatsbie" />
+        <a href="folders.html" class="celebration-button">Let's celebrate you! 🎉</a>
+    </section>
+
+        <!-- Memory Lane -->
+        <section id="memory-lane" class="content-section" aria-label="Memory Lane">
+            <!-- Memory lane content will be populated dynamically -->
+        </section>
+    </div>
+
+    <!-- Footnote -->
+    <footer class="footnote">
+        <p>Made with ❤️ for your special day</p>
+    </footer>
+
+    <!-- Background Music -->
+    <audio id="bgMusic" loop>
+        <source src="../memories/lv_0_20250617134933.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Heart animation logic
+            function createHeart() {
+                const heart = document.createElement('div');
+                heart.classList.add('heart');
+                heart.innerHTML = '&#x2764;';
+                document.querySelector('.floating-hearts').appendChild(heart);
+
+                const size = Math.random() * 20 + 10;
+                heart.style.width = `${size}px`;
+                heart.style.height = `${size}px`;
+                heart.style.left = `${Math.random() * 100}vw`;
+            }
+            setInterval(createHeart, 500); // Create a new heart every 0.5 seconds
+
+            // Background music logic
+            const bgMusic = document.getElementById('bgMusic');
+            bgMusic.volume = 0.3;
+            window.addEventListener('load', function() {
+                bgMusic.play().catch(function(error) {
+                    console.log("Audio autoplay failed:", error);
+                });
+            });
+            window.addEventListener('beforeunload', function() {
+                bgMusic.pause();
+            });
+        });
+    </script>
+</body>
+</html> 

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Gatsbie's Birthday Surprise</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:wght@700&family=Sacramento&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <div class="floating-hearts"></div>
+    <section id="login-screen">
+  <h1>Welcome, Gatsbie!</h1>
+        <p>Enter your age and PIN to proceed:</p>
+  <form id="login-form" novalidate>
+    <label for="age">Your Age:</label>
+            <input type="number" id="age" name="age" placeholder="how old is my baby na?" required />
+    <label for="pin">PIN Password (MMDDYYYY):</label>
+            <input type="password" id="pin" name="pin" placeholder="clue: birthday mo love" required pattern="\d{8}" autocomplete="off" />
+    <div id="error-msg" class="error" role="alert" aria-live="assertive"></div>
+    <button type="submit">Enter</button>
+  </form>
+</section>
+<script>
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            document.querySelector('.floating-hearts').appendChild(heart);
+
+            const size = Math.random() * 20 + 10; // Hearts between 10px and 30px
+            heart.style.width = `${size}px`;
+            heart.style.height = `${size}px`;
+
+            const randomCorner = Math.floor(Math.random() * 4); // 0: top-left, 1: top-right, 2: bottom-left, 3: bottom-right
+
+            if (randomCorner === 0) { // top-left
+                heart.style.left = `${Math.random() * 20}vw`;
+                heart.style.top = `${Math.random() * 20}vh`;
+            } else if (randomCorner === 1) { // top-right
+                heart.style.right = `${Math.random() * 20}vw`;
+                heart.style.top = `${Math.random() * 20}vh`;
+            } else if (randomCorner === 2) { // bottom-left
+                heart.style.left = `${Math.random() * 20}vw`;
+                heart.style.bottom = `${Math.random() * 20}vh`;
+            } else { // bottom-right
+                heart.style.right = `${Math.random() * 20}vw`;
+                heart.style.bottom = `${Math.random() * 20}vh`;
+            }
+
+            // Remove heart after animation ends
+            heart.addEventListener('animationend', () => {
+                heart.remove();
+            });
+        }
+
+        setInterval(createHeart, 500); // Create a new heart every 0.5 seconds
+
+        document.getElementById('login-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const age = document.getElementById('age').value;
+            const pin = document.getElementById('pin').value;
+            const errorMsg = document.getElementById('error-msg');
+
+            errorMsg.textContent = '';
+
+            // Correct Age: 19
+            // Correct PIN: 06172005 (June 17, 2005)
+            if (age === '19' && pin === '06212006') {
+                window.location.href = 'pages/main.html';
+        } else {
+                errorMsg.textContent = 'Incorrect age or PIN. Please try natin ulit (jk).';
+            }
+  });
+</script>
+</body>
+</html> 

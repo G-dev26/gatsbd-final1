@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Memories - Gatsbie's 19th</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        .gallery-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 2rem;
+        }
+
+        .gallery-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--deep-rose);
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .folders-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            padding: 1rem;
+        }
+
+        .memory-folder {
+            background: var(--soft-pink);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(183,110,121,0.2);
+            text-decoration: none;
+            color: inherit;
+            aspect-ratio: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .memory-folder:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(183,110,121,0.3);
+        }
+
+        .folder-icon {
+            font-size: 3rem;
+            color: var(--deep-rose);
+            margin-bottom: 1rem;
+        }
+
+        .memory-folder h3 {
+            color: var(--deep-rose);
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .memory-folder p {
+            color: var(--charcoal);
+            font-size: 0.9rem;
+            margin: 0;
+            opacity: 0.8;
+        }
+
+        .folder-preview {
+            width: 100%;
+            height: 200px;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 1rem;
+        }
+
+        .folder-preview img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center center;
+        }
+    </style>
+</head>
+<body>
+    <a href="folders.html" class="back-to-gallery"><</a>
+    <div class="gallery-container">
+        <h1 class="gallery-title">Our Memories</h1>
+        
+        <div class="folders-grid">
+            <a href="../memories/us.html" class="memory-folder">
+                <div class="folder-preview">
+                    <img src="../assets/images/us2.jpg" alt="Us">
+                </div>
+                <h3>US</h3>
+                <p>Some of my fav memories of ours na may pics <3</p>
+            </a>
+
+            <a href="../memories/pretty-baby.html" class="memory-folder">
+                <div class="folder-preview">
+                    <img src="../memories/prettyy.jpg" alt="My Pretty Baby">
+                </div>
+                <h3>MY PRETTY BABY</h3>
+                <p>Beautiful Wife</p>
+            </a>
+
+            <a href="../memories/sweet-kisses.html" class="memory-folder">
+                <div class="folder-preview">
+                    <img src="../memories/kiss.jpg" alt="Sweet Kisses">
+                </div>
+                <h3>SWEET KISSES</h3>
+                <p>So kanino na me magpapakiss? kay Yanna?</p>
+            </a>
+
+            <a href="../memories/warm-hugs.html" class="memory-folder">
+                <div class="folder-preview">
+                    <img src="../memories/hug1.jpg" alt="Warm Hugs">
+                </div>
+                <h3>WARM HUGS</h3>
+                <p>Kay Yanna nalang rin magpapahug</p>
+            </a>
+
+            <a href="../memories/silly-us.html" class="memory-folder">
+                <div class="folder-preview">
+                    <img src="../memories/silly1.jpg" alt="Silly Us">
+                </div>
+                <h3>SILLY US</h3>
+                <p>Parang tanga pero atleast kasama ka</p>
+            </a>
+
+            <a href="../memories/ponyo-parents.html" class="memory-folder">
+                <div class="folder-preview">
+                    <img src="../memories/ponyo1.jpg" alt="Ponyo Parents">
+                </div>
+                <h3>PONYO PARENTS</h3>
+                <p> Si Ponyo lang may album kase hindi niya me nakilala ng maayos, sabihin mo sa anak ko mas kamukha niya mommy niya (me)</p>
+            </a>
+
+            <a href="../memories/golden-memories.html" class="memory-folder">
+                <div class="folder-preview">
+                    <video controls width="100%" height="100%" style="object-fit: cover;">
+                    <source src="../assets/videos/golden.mp4" type="video/mp4">
+                     Your browser does not support the video tag.
+                </video>
+                </div>
+                <h3>LAST, LOVE</h3>
+                <p>We both know most of our memories are left uncaptured, but here are some that were.</p>
+            </a>
+        </div>
+    </div>
+</body>
+</html> 

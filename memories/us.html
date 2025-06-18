@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <title>Us - Our Memories</title>
+    <style>
+        .header {
+            text-align: center;
+            margin: 4rem 0;
+            padding: 0 2rem;
+        }
+
+        .header h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3em;
+            letter-spacing: 2px;
+            color: var(--deep-rose);
+            margin-bottom: 1rem;
+        }
+
+        .header p {
+            color: var(--charcoal);
+            font-size: 1.1rem;
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .memory-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .memory-item {
+            background: var(--soft-pink);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(183,110,121,0.2);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .memory-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .memory-media {
+            width: 100%;
+            aspect-ratio: 1/1;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .memory-media img,
+        .memory-media video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center center;
+        }
+
+        .memory-caption {
+            padding: 1rem;
+            text-align: center;
+            color: var(--charcoal);
+            font-size: 0.9rem;
+            max-height: 60px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            padding: 2rem;
+            box-sizing: border-box;
+        }
+
+        .lightbox.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox-content {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            max-height: 90vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .lightbox-media {
+            width: 100%;
+            aspect-ratio: 1/1;
+            overflow: hidden;
+            background: black;
+        }
+
+        .lightbox-media img,
+        .lightbox-media video {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .lightbox-message {
+            padding: 2rem;
+            background: var(--soft-pink);
+            color: var(--charcoal);
+            font-size: 1.1rem;
+            line-height: 1.6;
+            overflow-y: auto;
+            max-height: 30vh;
+            white-space: pre-line;
+        }
+
+        .close-lightbox {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--deep-rose);
+            color: white;
+            border: none;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1001;
+        }
+
+        .close-lightbox:hover {
+            transform: scale(1.1);
+            background: var(--deep-rose-hover);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../pages/gallery.html" class="back-to-gallery"><</a>
+        
+        <div class="header">
+            <h1>US</h1>
+            <p>
+                Every moment with you has been a beautiful chapter of my life. <br>
+                These memories are treasures I will cherish forever.
+                <br><br>
+                <em>Thank you, love.</em>
+            </p>
+        </div>
+
+        <div class="memory-grid">
+            <div class="memory-item" onclick="openLightbox('we1.jpg', 'Akala mo talaga ikakasal na — eto, naudlot tuloy. Jk.\n\nThis time was really precious for me tol, kase you met some of my classmates and you were not afraid to show them how clingy you were towards me. I was so proud at that moment kase I had a girl who was not shy to be seen around me.\n\nMalagip mo? Napan ta tinugawan amin nga cottage, ellek, it was one of the most fun things I have done with you. And I was so proud every time nga makikankanta ka. I got to say, kasjay ka talaga, and your voice was really beautiful. Fineflex nga kita noon eh lol.\n\nThis day was so nice, I did not want it to end. Pero yea, thank you for that day. I had fun love.')">
+                <div class="memory-media">
+                    <img src="we1.jpg" alt="Prenup">
+                </div>
+                <div class="memory-caption">
+                    Prenup ba ito?
+                </div>
+            </div>
+
+            <div class="memory-item" onclick="openLightbox('we2.jpg', 'The first person I ever truly made an effort for. The very first person I bought flowers for... and the very first person who ever gave me flowers in return.\n\nGatsbie, you deserve every flower in this world, for they are not just symbols of beauty—they are reflections of you.\n\nI never thought I would find someone who could make the simple act of giving and receiving flowers feel so meaningful... but you did. You made even the smallest gestures feel like magic. And if I could, I would give you a whole garden every day—because someone like you deserves nothing less than a universe full of gentle things, growing and blooming, just like the love I had for you.\n\nYou will always be the first... and the most unforgettable.')">
+                <div class="memory-media">
+                    <img src="we2.jpg" alt="Lovers">
+                </div>
+                <div class="memory-caption">
+                    First Flowers
+                </div>
+            </div>
+
+            <div class="memory-item" onclick="openLightbox('we3.jpg', 'Mine — these words came to me at this exact moment.\nThis was the first time you assured me, sincerely and softly, that you were mine.\nIt might sound simple to others, but for me, it was a really big moment.\nSomething shifted in my heart — I felt chosen, finally.')">
+                <div class="memory-media">
+                    <img src="we3.jpg" alt="Mine">
+                </div>
+                <div class="memory-caption">
+                    Mine
+                </div>
+            </div>
+
+            <div class="memory-item" onclick="openLightbox('we4.jpg', 'Sabogs lol — one of those early mornings where we would wake up beside each other, no filters, just bare faces.\nI love this pic so much, kase I see my baby here… my sleepy girl, probably di nakatulog ng maayos kasi sinagad ko na naman-- siya sa corner hehe.\nLove youuu. Moments like this — they made everything feel warm and soft.')">
+                <div class="memory-media">
+                    <img src="we4.jpg" alt="Sabogs">
+                </div>
+                <div class="memory-caption">
+                    Our Mornings
+                </div>
+            </div>
+
+            <div class="memory-item" onclick="openLightbox('we7.jpg', 'Remember this? It was so random na umupo kayo behind us — we did not even plan it, pero somehow it turned into a core memory for me.\nHolding hands, singing, smiling… just me and my baby, getting lost in the crowd.\n\nI love you for this.\nWe were actually fresh from a talk na tapusin na whatever we had, pero it ended like this instead — soft, beautiful, alive.\nThank God talaga. One of the best plot twists in my heart.')">
+                <div class="memory-media">
+                    <img src="we7.jpg" alt="First Concert">
+                </div>
+                <div class="memory-caption">
+                    First Concert
+                </div>
+            </div>
+
+            <div class="memory-item" onclick="openLightbox('we8.jpg', 'Second Concert: Maki\nYesss — I love you so much for this one.\nWe were both busy, drained from school, pero you still said yes. You still came with me all the way to Vigan just to watch Maki sing.\n\nThank you so much, love.\nWe kept making memories, and with each one, you were healing my inner child — the girl who always dreamed of being in a crowd, singing her heart out while her favorite artist played.\n\nHappy kid? Aba syempre.\nPlus… I had my baby with me. Complete na.')">
+                <div class="memory-media">
+                    <img src="we8.jpg" alt="Second Concert">
+                </div>
+                <div class="memory-caption">
+                    Second Concert
+                </div>
+            </div>
+
+            <div class="memory-item" onclick="openLightbox('we9.jpg', 'Third and Last Concert?\nThank you for coming with me that night — and for all the concerts we shared.\nEven when it felt risky for you, you still showed up, and that meant so much to me.\n\nI enjoyed every single moment.\nAnd I am sorry kung ending ng lahat is siyak nga agpasugnod huhu.\n\nTo no more concerts? Idk. Maybe.\nI just hope — if ever — you find someone who sings with you, dances with you, holds your hand like I did.\nA concert buddy who feels like home too.')">
+                <div class="memory-media">
+                    <img src="we9.jpg" alt="Third Concert">
+                </div>
+                <div class="memory-caption">
+                    Third and Last Concert?
+                </div>
+            </div>
+
+            <div class="memory-item" onclick="openLightbox('we10.jpg', 'love, you dont know how much this moment meant to me.\nAng tagal ko nang hindi pumupunta ng Vigan, and this was the most recent one… and I got to go with you.\n\nWe enjoyed the night despite everything. We had problems this night, pero thank you for holding on tol.\nI was a immature, and you were stressed, trying to cheer me up.\nI love you for that. For showing up, for staying. \n\n Mag-jowa ba kayo? ay tito asawa ko na yan (update: naghiwalay na tito)')">
+                <div class="memory-media">
+                    <img src="we10.jpg" alt="Vigan">
+                </div>
+                <div class="memory-caption">
+                    Vigan Night
+                </div>
+            </div>
+
+            <!-- Video Memory -->
+            <div class="memory-item">
+                <div class="memory-media">
+                    <video controls>
+                        <source src="usvideo.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="memory-caption">
+                    Fav vid of ours, our bardagulans, where in every pause, I can see in your eyes that you love me. I love you.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+        <div class="lightbox-content">
+            <button class="close-lightbox" onclick="closeLightbox()">&times;</button>
+            <div id="lightbox-media" class="lightbox-media"></div>
+            <div id="lightbox-message" class="lightbox-message"></div>
+        </div>
+    </div>
+
+    <!-- Audio Player -->
+    <div class="audio-player">
+        <audio id="bgMusic" loop>
+            <source src="thewinneris.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <script>
+        // Lightbox functionality
+        function openLightbox(mediaSrc, message) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxMedia = document.getElementById('lightbox-media');
+            const lightboxMessage = document.getElementById('lightbox-message');
+            
+            // Clear previous content
+            lightboxMedia.innerHTML = '';
+            
+            // Add new content
+            if (mediaSrc.endsWith('.mp4')) {
+                const video = document.createElement('video');
+                video.controls = true;
+                video.autoplay = true;
+                const source = document.createElement('source');
+                source.src = mediaSrc;
+                source.type = 'video/mp4';
+                video.appendChild(source);
+                lightboxMedia.appendChild(video);
+            } else {
+                const img = document.createElement('img');
+                img.src = mediaSrc;
+                img.alt = "Memory";
+                lightboxMedia.appendChild(img);
+            }
+            
+            lightboxMessage.textContent = message;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close lightbox when clicking outside
+        document.getElementById('lightbox').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeLightbox();
+            }
+        });
+
+        // Background music functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const audio = document.getElementById('bgMusic');
+            audio.volume = 0.5;
+            
+            // Try to play audio on user interaction
+            document.addEventListener('click', function() {
+                audio.play().catch(function(error) {
+                    console.log("Audio play failed:", error);
+            });
+            }, { once: true });
+        });
+    </script>
+</body>
+</html> 

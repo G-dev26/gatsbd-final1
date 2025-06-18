@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sweet Kisses - Our Memories</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body class="sweet-kisses-body">
+    <div class="audio-player">
+        <audio id="bgMusic" loop>
+            <source src="Michael Pangilinan - It Might Be You (Lyric Video).mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <div class="sweet-kisses-container">
+        <a href="../pages/gallery.html" class="back-to-gallery"><</a>
+        
+        <div class="sweet-kisses-header">
+            <h1>SWEET KISSES</h1>
+        </div>
+
+        <div class="sweet-kisses-slideshow-container">
+            <div class="sweet-kisses-slide active">
+                <img src="kiss1.jpg" alt="First Kiss">
+            </div>
+            <div class="sweet-kisses-slide">
+                <img src="kiss2.jpg" alt="Magic">
+            </div>
+            <div class="sweet-kisses-slide">
+                <img src="kiss3.jpg" alt="Sweet Candy">
+            </div>
+            <div class="sweet-kisses-slide">
+                <img src="kiss4.jpg" alt="Heart Skip">
+            </div>
+            <div class="sweet-kisses-slide">
+                <img src="kiss5.jpg" alt="Sweet Melody">
+            </div>
+        </div>
+
+        <div class="sweet-kisses-message-section">
+            <p>
+                <span class="indent">In every kiss, I felt that you were mine.</span><br>
+                <span class="indent">Your lips — they were always perfect with mine,</span><br>
+                <span class="indent">like they were meant to find me in this lifetime.</span><br><br>
+        
+                <span class="indent">You have no idea how I felt each time you kissed me.</span><br>
+                <span class="indent">Like time stopped.</span><br>
+                <span class="indent">Like nothing else mattered but you.</span><br>
+                <span class="indent">Every time I looked into your eyes, my heart whispered that you were the one.</span><br><br>
+        
+                <span class="indent">Those kisses told stories my heart was too afraid to speak.</span><br>
+                <span class="indent">Maybe that's why I kissed you more than you kissed me —</span><br>
+                <span class="indent">because I thought it was the only way I could say "I love you."</span><br><br>
+        
+                <span class="indent">But now, they've become memories I'll hold onto,</span><br>
+                <span class="indent">no matter how much it hurts.</span><br><br>
+        
+                <span class="indent">And God, how I wish I could kiss you again.</span><br>
+                <span class="indent">Just once.</span><br>
+                <span class="indent">Just to feel that warmth, that safety, that love —</span><br>
+                <span class="indent">even for a second.</span><br><br>
+        
+                <span class="indent">But I can't.</span><br>
+                <span class="indent">Because you're not mine anymore.</span><br>
+                <span class="indent">You're not my baby anymore… and it hurts.</span><br>
+                <span class="indent">And now, I have to learn to live with that.</span><br><br>
+        
+                <span class="indent">Still...</span><br>
+                <span class="indent">something deep inside me keeps whispering —</span><br>
+                <span class="indent"><em>it might be you.</em></span><br>
+                <span class="indent">It's always been you.</span><br><br>
+        
+                <span class="indent">I'm sorry, love.</span><br>
+                <span class="indent">For all the things I couldn't be.</span><br>
+                <span class="indent">For all the love that's still here, with nowhere to go.</span><br><br>
+        
+                <span class="signature">— I love you</span>
+            </p>
+        </div>             
+
+    <script>
+        // Audio player functionality
+        const bgMusic = document.getElementById('bgMusic');
+        bgMusic.volume = 0.3;
+
+        window.addEventListener('load', function() {
+            bgMusic.play().catch(function(error) {
+                console.log("Audio play failed:", error);
+            });
+        });
+
+        window.addEventListener('beforeunload', function() {
+            bgMusic.pause();
+            bgMusic.currentTime = 0;
+        });
+
+        // Slideshow functionality
+        const slides = document.querySelectorAll('.sweet-kisses-slide');
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            slides[index].classList.add('active');
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        // Start slideshow
+        setInterval(nextSlide, 5000); // Change slide every 5 seconds
+    </script>
+</body>
+</html> 

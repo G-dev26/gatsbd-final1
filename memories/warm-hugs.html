@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warm Hugs - Our Memories</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body class="warm-hugs-body">
+    <div class="audio-player">
+        <audio id="bgMusic" loop>
+            <source src="Mhir - Someone I'll Wait (Official Music Video).mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <div class="warm-hugs-container">
+        <a href="../pages/gallery.html" class="back-to-gallery"><</a>
+        
+        <div class="warm-hugs-memory-container">
+            <h1 class="warm-hugs-memory-title">WARM HUGS</h1>
+            
+            <div class="warm-hugs-memory-grid">
+                <div class="warm-hugs-memory-item">
+                    <div class="warm-hugs-memory-media">
+                        <img src="hug1.jpg" alt="First Hug">
+                    </div>
+                </div>
+
+                <div class="warm-hugs-memory-item">
+                    <div class="warm-hugs-memory-media">
+                        <img src="hug2.jpg" alt="Safe Place">
+                    </div>
+                </div>
+
+                <div class="warm-hugs-memory-item">
+                    <div class="warm-hugs-memory-media">
+                        <img src="hug3.jpg" alt="Coming Home">
+                    </div>
+                </div>
+
+                <div class="warm-hugs-memory-item">
+                    <div class="warm-hugs-memory-media">
+                        <img src="hug4.jpg" alt="Protected">
+                    </div>
+                </div>
+
+                <div class="warm-hugs-memory-item">
+                    <div class="warm-hugs-memory-media">
+                        <img src="hug5.jpg" alt="Warm Blanket">
+                    </div>
+                </div>
+            </div>
+
+            <div class="warm-hugs-message-section">
+                <p>
+                    <span class="indent">In your arms, I found a sanctuary.</span><br><br>
+            
+                    <span class="indent">Your hugs felt like home —</span><br>
+                    <span class="indent">the safest, warmest place I've ever known.</span><br>
+                    <span class="indent">Whenever you held me close, the world softened.</span><br>
+                    <span class="indent">I always ended up falling asleep in your embrace,</span><br>
+                    <span class="indent">because that's how safe I felt with you.</span><br><br>
+            
+                    <span class="indent">Even when I laid on your lap,</span><br>
+                    <span class="indent">or stayed still in your arms on those cold chairs,</span><br>
+                    <span class="indent">I never wanted to move — because being next to you felt like peace.</span><br><br>
+            
+                    <span class="indent">I'll miss the softness of your skin,</span><br>
+                    <span class="indent">how it calmed me like a quiet lullaby against my own restless heart.</span><br>
+                    <span class="indent">And your scent… God, your scent.</span><br>
+                    <span class="indent">That familiar fragrance that clung to my clothes,</span><br>
+                    <span class="indent">that stayed on me after every hug, every sleep, every morning —</span><br>
+                    <span class="indent">even before you'd showered.</span><br>
+                    <span class="indent">It was you. It's always been you.</span><br><br>
+            
+                    <span class="indent">I'll miss everything about those hugs —</span><br>
+                    <span class="indent">the way they healed me without saying a word,</span><br>
+                    <span class="indent">the way they made me believe I belonged somewhere.</span><br><br>
+            
+                    <span class="indent">You were my safest place to fall.</span><br>
+                    <span class="indent">And now, I carry that emptiness like a quiet ache.</span><br><br>
+            
+                    <span class="signature">— Forever in your arms</span>
+                </p>
+            </div>            
+        </div>
+    </div>
+
+    <script>
+        // Audio player functionality
+        const bgMusic = document.getElementById('bgMusic');
+        bgMusic.volume = 0.3;
+
+        window.addEventListener('load', function() {
+            bgMusic.play().catch(function(error) {
+                console.log("Audio play failed:", error);
+            });
+        });
+    </script>
+</body>
+</html> 

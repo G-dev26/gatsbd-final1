@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <title>My Pretty Baby - Our Memories</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="pretty-baby-body">
+    <div class="audio-player">
+        <audio id="bgMusic" loop>
+            <source src="Laufey - Magnolia (Official Audio).mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="pretty-baby-lightbox">
+        <div class="pretty-baby-lightbox-content">
+            <button class="pretty-baby-close-lightbox" onclick="closeLightbox()">×</button>
+            <img id="lightbox-img" class="pretty-baby-lightbox-image" src="" alt="Enlarged view">
+            <div id="lightbox-message" class="pretty-baby-lightbox-message"></div>
+        </div>
+    </div>
+
+    <div class="pretty-baby-container">
+        <a href="../pages/gallery.html" class="back-to-gallery"><</a>
+        
+        <div class="pretty-baby-header">
+            <h1>MY PRETTY BABY</h1>
+        </div>
+
+        <div class="pretty-baby-slideshow-container">
+            <button class="pretty-baby-nav-button pretty-baby-prev-button" onclick="prevSlide()">❮</button>
+            <button class="pretty-baby-nav-button pretty-baby-next-button" onclick="nextSlide()">❯</button>
+            <div class="pretty-baby-slideshow-track">
+                <div class="pretty-baby-slide" onclick="openLightbox('baby1.jpg', 'Hi there little Gatsbie!')">
+                    <img src="baby1.jpg" alt="Baby Gats">
+                </div>
+                <div class="pretty-baby-slide" onclick="openLightbox('baby2.jpg', 'My baby with her mom and dad, hi pooo')">
+                    <img src="baby2.jpg" alt="Baby Gats w Parents">
+                </div>
+                <div class="pretty-baby-slide" onclick="openLightbox('baby3.jpg', 'Hi love, you look pretty here')">
+                    <img src="baby3.jpg" alt="Pretty">
+                </div>
+                <div class="pretty-baby-slide" onclick="openLightbox('baby4.jpg', 'Every angle of you looks nice, love')">
+                    <img src="baby4.jpg" alt="Pretty">
+                </div>
+                <div class="pretty-baby-slide" onclick="openLightbox('baby5.jpg', 'Oh pak! san ka jan?, sexy loviee')">
+                    <img src="baby5.jpg" alt="Sexy">
+                </div>
+                <div class="pretty-baby-slide" onclick="openLightbox('baby6.jpg', 'My baby looks tired, still looks pretty tho hihi love youu I really need to get you some new flowers')">
+                    <img src="baby6.jpg" alt="Flowers">
+                </div>
+                <div class="pretty-baby-slide" onclick="openLightbox('baby7.jpg', 'AAAAAA you dont know how much I love this pic lol so prettyy')">
+                    <img src="baby7.jpg" alt="Baby">
+                </div>
+                <div class="pretty-baby-slide" onclick="openLightbox('baby8.jpg', 'you were so in the moment in this one haha you look nicee')">
+                    <img src="baby8.jpg" alt="Look up">
+                </div>
+                <div class="pretty-baby-slide" onclick="openLightbox('baby9.jpg', 'baks, what if tinadyakan ka ni Mokang the horse dito?')">
+                    <img src="baby9.jpg" alt="Horse">
+                </div>
+                <div class="pretty-baby-slide" onclick="openLightbox('baby10.jpg', 'I honestly think you look pretty in this one, I want those kissable lipss, my simple pretty baby')">
+                    <img src="baby10.jpg" alt="Pretty">
+                </div>
+                <div class="pretty-baby-slide" onclick="openLightbox('baby11.jpg', 'Hi sa mag ina ko, I miss you both')">
+                    <img src="baby11.jpg" alt="Yagi">
+                </div>
+                <div class="pretty-baby-slide" onclick="openLightbox('baby12.jpg', 'I love this one also, idk iba ba trip ko huhu ayaw mo ng mga gusto kong pics mo lol whatt you look good in here kaya')">
+                    <img src="baby12.jpg" alt="Pretty">
+                </div>
+                <div class="pretty-baby-slide" onclick="openLightbox('baby13.jpg', 'How I wished to experience a beach date with you. \n I guess I wont know how it feels now. \n You look pretty here baby')">
+                    <img src="baby13.jpg" alt="Love">
+                </div>
+                <div class="pretty-baby-slide" onclick="openLightbox('baby14.jpg', 'Idk you look nice here you look like someone I wouldnt dare to even talk to cause ure too pretty hihi')">
+                    <img src="baby14.jpg" alt="Mwa">
+                </div>
+                <div class="pretty-baby-slide" onclick="openLightbox('baby15.jpg', 'Ofc, the OG Gatsbie. \n Si hindi pa nasaktan Gatsbie, so pretty. \n I love you, Im sorrry.')">
+                    <img src="baby15.jpg" alt="Mwa">
+                </div>
+                <div class="pretty-baby-slide" onclick="openLightbox('prettyy.jpg', 'Probably my favorite photo of yours.')">
+                    <img src="prettyy.jpg" alt="Lovee">
+                </div>
+                <div class="pretty-baby-slide" onclick="openLightbox('prettyy1.jpg', 'I love you, pretty. Luluhuran huhu')">
+                    <img src="prettyy1.jpg" alt="Beach">
+                </div>
+                <div class="pretty-baby-slide" onclick="openLightbox('prettyy2.jpg', 'Remember when you sent me this? Lol I was kicking my feet. Ammok idi nga wedding dress siya pero I did not say it agad kase baka mali pero when you said that it was, lol my brain was like, (MY WIFEEEEE) yea bro someone who has this pretty woman is so lucky')">
+                    <img src="prettyy2.jpg" alt="Wife">
+                </div>
+                <div class="pretty-baby-slide" onclick="openLightbox('prettyy3.jpg', 'I love this too! AAAAA my baby so pretty ammom ba mano beses ko kinita nu ana kamayatan i story idi? And how nervous I was to actually put it into my story but at the same timme I was so proud and cant wait to flex my pretty baby')">
+                    <img src="prettyy3.jpg" alt="Pretty">
+                </div>
+                <div class="pretty-baby-slide" onclick="openLightbox('prettyy4.jpg', 'You looked cute in here, I badly wanna spoil')">
+                    <img src="prettyy4.jpg" alt="Cute">
+                </div>
+                <div class="pretty-baby-slide" onclick="openLightbox('prettyy5.jpg', 'BADASS. any style suits you')">
+                    <img src="prettyy5.jpg" alt="Madamm">
+                </div>
+                <div class="pretty-baby-slide" onclick="openLightbox('prettyy6.jpg', 'My light fury')">
+                    <img src="prettyy6.jpg" alt="Madamm">
+                </div>
+                <div class="pretty-baby-slide" onclick="openLightbox('prettyy7.jpg', 'Forever i sstalk-- jk creepy naman. I love this photo rin so pretty')">
+                    <img src="prettyy7.jpg" alt="Madamm">
+                </div>
+            </div>
+        </div>
+
+        <div class="pretty-baby-message-section">
+            <p>
+                <span class="indent">In every photo lies a reason why I fell deeper in love with your beauty.</span><br><br>
+                
+                <span class="indent">Your smile — it lights up even the darkest corners of my world,</span><br>
+                <span class="indent">and your eyes… they held the promise of forever,</span><br>
+                <span class="indent">of something that once was, and will always mean everything to me.</span><br><br>
+                
+                <span class="indent">You are my pretty baby, my muse, my everything.</span><br>
+                <span class="indent">And I will love every version of you — every angle, every phase,</span><br>
+                <span class="indent">even the ones you try to hide from the world.</span><br>
+                <span class="indent">Because to me, you've always been a priceless work of art.</span><br><br>
+                
+                <span class="signature">— Your lover once</span>
+            </p>
+        </div>        
+        </div>        
+
+    <script>
+        // Auto-scroll slideshow
+        const track = document.querySelector('.pretty-baby-slideshow-track');
+        const slides = document.querySelectorAll('.pretty-baby-slide');
+        let currentIndex = 0;
+        const slideWidth = slides[0].offsetWidth + 24; // 24px for gap
+        let autoSlideInterval;
+
+        // Audio player functionality
+        const bgMusic = document.getElementById('bgMusic');
+        bgMusic.volume = 0.3; // Set volume to 30%
+
+        // Play music when page loads
+        window.addEventListener('load', function() {
+            bgMusic.play().catch(function(error) {
+                console.log("Audio play failed:", error);
+            });
+            startAutoSlide();
+        });
+
+        // Stop music when leaving the page
+        window.addEventListener('beforeunload', function() {
+            bgMusic.pause();
+            bgMusic.currentTime = 0;
+            stopAutoSlide();
+        });
+
+        function moveSlides(direction = 1) {
+            currentIndex += direction;
+            if (currentIndex >= slides.length - 2) {
+                currentIndex = 0;
+            } else if (currentIndex < 0) {
+                currentIndex = slides.length - 3;
+            }
+            track.style.transition = 'transform 0.5s ease-in-out';
+            track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+        }
+
+        function startAutoSlide() {
+            stopAutoSlide(); // Clear any existing interval
+            autoSlideInterval = setInterval(() => moveSlides(1), 3000);
+        }
+
+        function stopAutoSlide() {
+            if (autoSlideInterval) {
+                clearInterval(autoSlideInterval);
+            }
+        }
+
+        function nextSlide() {
+            stopAutoSlide();
+            moveSlides(1);
+            startAutoSlide();
+        }
+
+        function prevSlide() {
+            stopAutoSlide();
+            moveSlides(-1);
+            startAutoSlide();
+        }
+
+        // Lightbox functionality
+        function openLightbox(imageSrc, message) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const lightboxMessage = document.getElementById('lightbox-message');
+            
+            lightboxImg.src = imageSrc;
+            lightboxMessage.textContent = message;
+            lightbox.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close lightbox when clicking outside
+        document.getElementById('lightbox').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeLightbox();
+            }
+        });
+
+        // Close lightbox with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+    </script>
+</body>
+</html> 
